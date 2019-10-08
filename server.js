@@ -13,5 +13,6 @@ app.get('/', function(req, res) {
 });
 
 app.use('/dinosaurs', require('./routes/dinosaurs.js'));
+app.use('/cryptids', require('./routes/cryptids.js'));
 
 app.listen(3000);
