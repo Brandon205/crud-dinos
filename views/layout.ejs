@@ -5,11 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Dinosaurs</title>
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-    <nav>
-        <a href="/">Home</a> | <a href="/dinosaurs">Dinosaurs</a>
-    </nav>
-    <%- body %>
+    <header>
+        <h1>My Dinosaur and Cryptid App</h1>
+        <nav>
+            <a href="/">Home</a> | <a href="/dinosaurs">Dinosaurs</a> | <a href="/dinosaurs/new">Add Dinos</a>
+        </nav>
+    </header>
+    <main>
+        <%- body %>
+    </main>
+    <footer>© 2019 Brandon</footer>
 </body>
 </html>
