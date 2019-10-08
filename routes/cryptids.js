@@ -6,6 +6,27 @@ router.get('/', function(req, res) {
     var cryptids = fs.readFileSync('./cryptids.json');
     var cryptidData = JSON.parse(cryptids);
     res.render('cryptids/index.ejs', {cryptids: cryptidData});
-})
+});
+
+router.post('/', function(req, res) {
+    var cryptids = fs.readFileSync('./cryptids.json');
+    var cryptidData = JSON.parse(cryptids);
+    cryptidData.push(req.body);
+    fs.writeFileSync('./cryptids.json', JSON.stringify(cryptidData));
+    res.redirect('/cryptids');
+});
+
+router.get('/new', function(req, res) {
+    res.render('cryptids/new.ejs');
+});
+
+router.get('/:id', function(req, res) {
+    var index = parseInt(req.params.id);
+    var cryptids = fs.readFileSync('./cryptids.json');
+    var cryptidData = JSON.parse(cryptids);
+    res.render('cryptids/show', {cryptid: cryptidData[index]});
+});
+
+
 
 module.exports = router;
