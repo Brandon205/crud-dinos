@@ -8,7 +8,7 @@ app.use(ejsLayout);
 app.use(express.static('static')); // will show where the static or not rendered webpages will be 
 
 app.get('/', function(req, res) {
-    res.send('Welcome Home');
+    res.render('home.ejs');
 });
 
 app.use('/dinosaurs', require('./routes/dinosaurs'));
