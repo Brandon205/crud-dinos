@@ -1,5 +1,6 @@
 <ul>
 <% cryptids.forEach(function(cryptid, id) { %>
+    <% //console.log( typeof(cryptid.img_url)); %>
     <li> 
         <a href="/cryptids/<%= id %>"> <%= cryptid.name %> </a>: <img src="<%= cryptid.img_url %>" alt="<%= cryptid.name %>">
         <form action="/cryptids/<%= id %>/?_method=DELETE" method="POST">

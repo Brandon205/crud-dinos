@@ -38,5 +38,23 @@ img {
 }
 
 form {
-    display: inline;
+    display: block;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+input {
+    margin-bottom: 15px;
+}
+
+button {
+    margin-bottom: 10px;
+    padding: 5px;
+}
+
+button:hover {
+    /* background-color: lightgray; */
+    box-shadow: 2px 3px 1px gray;
 }
