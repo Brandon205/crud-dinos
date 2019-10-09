@@ -1,3 +1,10 @@
+<ul>
 <% cryptids.forEach(function(cryptid, id) { %>
-    <p> <a href="/cryptids/<%= id %>"> <%= cryptid.name %> </a>: <img src="<%= cryptid.img_url %>" alt="<%= cryptid.name %>"></p>
-<% }) %>
+    <li> 
+        <a href="/cryptids/<%= id %>"> <%= cryptid.name %> </a>: <img src="<%= cryptid.img_url %>" alt="<%= cryptid.name %>">
+        <form action="/cryptids/<%= id %>/?_method=DELETE" method="POST">
+            <input type="submit" value="X">
+        </form>
+    </li>
+<% }); %>
+</ul>

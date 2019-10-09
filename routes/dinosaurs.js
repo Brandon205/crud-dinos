@@ -30,7 +30,16 @@ router.put('/:id', function(req, res) {
     dinoData[index] = req.body;
     fs.writeFileSync('./dinosaurs.json', JSON.stringify(dinoData));
     res.redirect(`/dinosaurs/${index}`);
-})
+});
+
+router.delete('/:id', function(req, res) {
+    var index = parseInt(req.params.id);
+    var dinos = fs.readFileSync('./dinosaurs.json');
+    var dinoData = JSON.parse(dinos);
+    dinoData.splice(index, 1);
+    fs.writeFileSync('./dinosaurs.json', JSON.stringify(dinoData));
+    res.redirect('/dinosaurs');
+});
 
 router.get('/new', function(req, res) {
     res.render('dinosaurs/new');
